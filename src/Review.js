@@ -1,13 +1,18 @@
-function Review () {
+import React from 'react';
 
 
 
-    
-    return (
-          <>
-            <div>This was a great movie. Would recommend it to everyone!</div>
-            <div className='user-name'>-Byron Rodriguez</div>
-          </>
-    )
+
+
+
+function Review(props) {
+  
+      return (
+        <>
+          <div>{props.reviewText}</div>
+          <div className='user-name'>-{props.name}</div>
+        </>
+      )  
 }
 export default Review;
+

@@ -1,14 +1,24 @@
-function ReviewList () {
+import React from 'react';
+import Review from './Review';
 
-  return ( 
-    
-    <><hr></hr>
-          <div>This was a great movie. Would recommend it to everyone!</div>
-          <div className='user-name'>-Byron Rodriguez</div>
-          <div>This movie is trash!</div>
-          <div className='user-name'>-Margaret Jeffry</div>  
+
+function ReviewList(props) {
+
+  return (
+    <>
+      {props.reviews.map(function (data, index) {
+        return (
+
+          <div class="col-3">
+            <Review key={index} name={data.name} reviewText={data.reviewText} />
+          </div>
+        )
+      })}
+
     </>
-)
-}
 
+
+  )
+
+}
 export default ReviewList;

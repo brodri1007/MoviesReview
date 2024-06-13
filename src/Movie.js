@@ -1,15 +1,36 @@
-function Movie () {
+import React from 'react';
+import Review from "./Review"
+import ReviewForm from "./ReviewForm"
+import Stars from "./Stars"
 
+function Movie (props) {
 
+    let title = props.title;
+    let id = props.id;
+    let image = props.image;
+    let year = props.year;
+    let genre = props.genre;
+    let description = props.description;
 
     return (
         <>
-            <div id="photo">
-                 <h3>Title</h3>
-                 <img src="https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg" alt="img" width="150px" />
+            
+            <div className='card align-items-center'  key={id}>
+                <h3>{title}</h3>
+                <img src={image} alt="img" width="290px" />
+                <div class="pt-3 fs-1" ><h4>{genre} {year}</h4></div>
+                <div class="pb-5">{description}</div>
+            
+            <section className='reviews'>
+                <h2>Reviews</h2>
+                <Stars />
+                <Review />
+                <h2>Review Form</h2>
+                <ReviewForm />
+            </section>
             </div>
-            <div id="genre-yr"><h4>Comedy / 2023</h4></div>
-            <div id="description">"The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb."</div>
+         
+       
         </>
         )
     
