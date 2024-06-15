@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 
 
-export default function Stars() {
+
+
+
+export default function Stars(props) {
+
+
+
     const [rating, setRating] = useState(0);
     const starsArr = [1, 2, 3, 4, 5];  
+
   
 
     const showHoverEffect = (e) => {
@@ -43,7 +50,8 @@ export default function Stars() {
     };
   
     return (
-      <div style={{ display: "flex", width: "10%", margin: "0.1rem" }}>
+    <>
+      <div style={{ display: "flex" }}>
         {starsArr.map((id) => (
           <div key={id}>
             <svg
@@ -66,9 +74,10 @@ export default function Stars() {
                   231,161 321,161"
               />
             </svg>           
-          </div>           
+          </div>    
         ))}
-        
       </div>
+
+    </> 
     );
   }
