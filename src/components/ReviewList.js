@@ -2,7 +2,7 @@ import React from 'react';
 import Review from './Review';
 
 
-const reviewsList = [ 
+const baseReviews = [ 
   {
     "id": 32,
     "movieid": 1,
@@ -10,7 +10,7 @@ const reviewsList = [
     "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
   },
   {
-    "id": 33,
+    "id": 34,
     "movieid": 2,
     "reviewer": "Daniel Jeffry",
     "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
@@ -22,7 +22,7 @@ const reviewsList = [
     "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
   },
   {
-    "id": 33,
+    "id": 36,
     "movieid": 4,
     "reviewer": "Pedro Rodriguez",
     "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
@@ -31,6 +31,7 @@ const reviewsList = [
 
 
 function ReviewList(props) { 
+  const [reviewsList, setReviewsList] = {baseReviews}
 
   let movieid = props.movieid;
 
@@ -39,8 +40,8 @@ function ReviewList(props) {
   return (
     <>
       {filteredReviewList.map(movieReview => (
-        <div key={movieReview.id} className="col-4">
-          <Review reviews={[movieReview]} />
+        <div key={movieReview.id} className="col">
+          <Review reviews={[movieReview]} setReviewsList={setReviewsList}  />
         </div>
       ))}
     </>

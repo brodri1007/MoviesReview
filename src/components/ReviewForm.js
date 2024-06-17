@@ -11,9 +11,8 @@ function ReviewForm (props) {
 
 
   const handleSubmit = (e) => {
-    
-    
-    e.preventDefault();  
+    e.preventDefault(); 
+    console.log("handleSubmit; Props: ", props) 
     setMovieid(props.movieid);
 
     const newReview = {
@@ -22,14 +21,19 @@ function ReviewForm (props) {
       "reviewer": reviewer,
       "reviewText": review
     }
-
+    console.log(newReview)
+alert(`${newReview.reviewer} says ${newReview.reviewText}`)
     if (review) {
       setList([...reviewList, newReview]);
+      console.log(reviewList)
       setReview("");
       setReviewer("");
     }
 
   };
+
+  //console.log("review: " , review)
+  //console.log("reviewer: ", reviewer)
 
     return (
 
