@@ -1,23 +1,26 @@
 import React from 'react';
-import Movie from "./components/Movie"
+import Movie from './Movie';
+
 
 function MovieList(props) {
+    
+    let movies = props.movies;
 
+    return (
+        <>
+            {movies.map(movie => {
 
-return(
-    <>
-        {props.movies.map(function (data) {            
+                return (
+                    <>
+                       <Movie key={movie.movieid} movie={movie} />                          
+                                    
+                    </>
+                )
 
-            return (   
-                <div key={data.id} className="col-4">      
-                    <Movie key={data.id} title={data.title} image={data.image} year={data.year} genre={data.genre} description={data.description} /> 
-                </div>      
-            )
-        })      
-        }
+            })}
 
-    </>
+        </>
 
-)
+    )
 }
 export default MovieList

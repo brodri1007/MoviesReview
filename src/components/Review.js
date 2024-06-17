@@ -2,23 +2,23 @@ import React from 'react';
 
 
 function Review(props) {
- 
- 
-  let review = props.review;
   
+  let reviews = props.reviews;
 
   return (
     <>
-      <li key={review.id}>
-        <p>
-          <b>{review.reviewText}</b>
-          {'-' + review.userName}
-        </p>
-      </li>
+      {reviews.map(review => (
+        <div key={review.id} id="review">
+          <p>{review.reviewText}</p>
+          <p>- {review.reviewer}</p>         
+        </div>
+      ))}
     </>
-
-
-      )  
+  );
 }
+
 export default Review;
+
+
+
 

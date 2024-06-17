@@ -1,41 +1,30 @@
 import React from 'react';
-import ReviewList from './components/ReviewList';
-
-
-
+import ReviewList from './ReviewList';
+import Stars from './Stars';
+import ReviewForm from './ReviewForm';
 
 function Movie (props) {
 
-  //alert(JSON.stringify(props));
 
-    let title = props.title;
-    let id = props.id;
-    let image = props.image;
-    let year = props.year;
-    let genre = props.genre;
-    let description = props.description;
-
-    //alert(JSON.stringify(id))
-      //alert(JSON.stringify(props.id))
-      // if(reviews.id === props.id) {
-      //     <Review movie-id={id} />
-      // } 
+let movie = props.movie;
+//alert(JSON.stringify(movie))
 
     return ( 
-        <>
-            
-            <div className='card align-items-center col'  key={id}>
-                <h3>{title}</h3>
-                <img src={image} alt="img" width="120px" />
-                <div className="pt-3 fs-1" ><h6>{genre} {year}</h6></div>
-                <div className="pb-5">{description}</div>
-            
-                {<h2>Reviews</h2>}
-                        
-                <ReviewList movieid={id} />
-            </div>
-         
-       
+        <> 
+             
+        <div className='card align-items-center' key={movie.id}>
+          <h2>{movie.title}</h2>
+          <img src={movie.image} alt="img" width="120px" />
+          <p className="pt-3 fs-1">
+            <h6>{movie.genre}  {movie.year}</h6>
+          </p>
+          <span className="pb-5">{movie.description}</span>
+          <h2>Reviews</h2>
+          <Stars movieid={movie.id}/>  
+          <ReviewList movieid={movie.id}/>
+          <ReviewForm movieid={movie.id} />  
+        </div> 
+          
         </>
         )
     
