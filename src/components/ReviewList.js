@@ -1,41 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Review from './Review';
+import ReviewForm from './ReviewForm';
 
 
-const reviewsList = [ 
-  {
-    "id": 32,
-    "movieid": 1,
-    "reviewer": "Lucas Ventivogio",
-    "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
-  },
-  {
-    "id": 33,
-    "movieid": 2,
-    "reviewer": "Daniel Jeffry",
-    "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
-  },
-  {
-    "id": 35,
-    "movieid": 3,
-    "reviewer": "Juan Gonzales",
-    "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
-  },
-  {
-    "id": 33,
-    "movieid": 4,
-    "reviewer": "Pedro Rodriguez",
-    "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
-  },
-];
 
 
 function ReviewList(props) { 
+  const { initialReviewsList = [], movieid } = props;
+  const [reviewsList, setReviewsList] = useState(initialReviewsList);
 
-  let movieid = props.movieid;
+  const handleAddReview = (newReview) => {
+    setReviewsList([...reviewsList, newReview]);
+  };
 
   const filteredReviewList = reviewsList.filter(review => review.movieid === movieid);
-  
+
   return (
     <>
       {filteredReviewList.map(movieReview => (
@@ -43,12 +22,9 @@ function ReviewList(props) {
           <Review reviews={[movieReview]} />
         </div>
       ))}
+      <ReviewForm movieid={movieid} onAddReview={handleAddReview} />
     </>
   );
 }
 
 export default ReviewList;
-
-
-
-

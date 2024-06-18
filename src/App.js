@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import MovieList from './components/MovieList';
+import Movie from './components/Movie';
 
 
 
@@ -48,7 +49,7 @@ function App() {
 
       },
       {
-        "id": "3",
+        "id": 3,
         "rank": 34,
         "title": "Back to the Future",
         "description": "Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.",
@@ -66,7 +67,7 @@ function App() {
         "imdb_link": "https://www.imdb.com/title/tt0088763"
       },
       {
-        "id": "4",
+        "id": 4,
         "rank": 35,
         "title": "The Pianist",
         "description": "A Polish Jewish musician struggles to survive the destruction of the Warsaw ghetto of World War II.",
@@ -93,7 +94,14 @@ function App() {
     <div className="App">
       <h1>Movie Reviews</h1>
       <div className="row"> 
-           <MovieList movies={movies}/>
+      {movies.map(movie => {
+            return (
+                <><div className="col" key={movie.movieid}>
+                    <Movie key={movie.movieid} movie={movie} /> 
+                  </div> 
+                </>
+            )
+        })}
       </div>  
     </div>
   )

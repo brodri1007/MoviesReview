@@ -12,6 +12,11 @@ margin: rem
     
 }
 
+.yr {
+    font-size:medium;
+    font-weight: 700;
+}
+
 .reviews {
     padding-bottom: 25px;
 }

@@ -8,17 +8,13 @@ function MovieList(props) {
 
     return (
         <>
-            {movies.map(movie => {
-
-                return (
-                    <>
-                       <Movie key={movie.movieid} movie={movie} />                          
-                                    
-                    </>
-                )
-
-            })}
-
+        {movies.map(movie => {
+            return (
+                <>
+                    <Movie key={movie.movieid} movie={movie} />  
+                </>
+            )
+        })}
         </>
 
     )
