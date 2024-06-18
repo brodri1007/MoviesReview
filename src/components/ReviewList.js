@@ -18,8 +18,8 @@ function ReviewList(props) {
   return (
     <>
       {filteredReviewList.map(movieReview => (
-        <div key={movieReview.id} className="col-4">
-          <Review reviews={[movieReview]} />
+        <div key={movieReview.id} className="col">
+          <Review reviews={[movieReview]} setReviewsList={setReviewsList}  />
         </div>
       ))}
       <ReviewForm movieid={movieid} onAddReview={handleAddReview} />

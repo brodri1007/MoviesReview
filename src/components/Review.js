@@ -9,6 +9,8 @@ function Review({ reviews = [] }) {
           <p>{review.reviewText}</p>
           <p>- {review.reviewer}</p>
         </div>
+        
+
       ))}
 
     </>
