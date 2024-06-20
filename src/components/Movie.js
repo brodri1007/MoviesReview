@@ -4,6 +4,7 @@ import Stars from './Stars';
 import ReviewForm from './ReviewForm';
 
 
+
 const reviewsList = [ 
   {
     "id": 32,
@@ -24,7 +25,7 @@ const reviewsList = [
     "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
   },
   {
-    "id": 33,
+    "id": 34,
     "movieid": 4,
     "reviewer": "Pedro Rodriguez",
     "reviewText": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",   
@@ -35,7 +36,7 @@ function Movie (props) {
 
 
 let movie = props.movie;
-//alert(JSON.stringify(movie))
+/*Get the movie details from the props. Add the Stars component. Pass the initial reviews list to the Reviewlist components to display reviews for each movie*/
 
     return ( 
         <> 
@@ -44,13 +45,13 @@ let movie = props.movie;
           <h2>{movie.title}</h2>
           <img src={movie.image} alt="img" width="120px" />
           <p className=" pt-3 fs-1">
-           <span className='yr'> {movie.genre}  {movie.year}</span>
+            <span className='yr'> {movie.genre}  {movie.year}</span>
           </p>
           <span className="pb-5">{movie.description}</span>
           <h2>Reviews</h2>
-          <Stars />  
-          <ReviewList  movieid={movie.id} initialReviewsList={reviewsList}/>          
-        
+          <Stars movieid={movie.id} />
+          <ReviewList movieid={movie.id} initialReviewsList={reviewsList} />         
+          
         </div> 
           
         </>

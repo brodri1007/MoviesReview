@@ -4,33 +4,32 @@ function ReviewForm({ movieid, onAddReview }) {
   const [reviewText, setReviewText] = useState('');
   const [reviewer, setReviewer] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-    console.log("handleSubmit; Props: ", props) 
-    setMovieid(props.movieid);
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const newReview = {
-      "id": Math.random(),
-      "movieid": movieid,
-      "reviewer": reviewer,
-      "reviewText": review
-    }
+      id: Math.round(Math.random() * 1000), 
+      movieid,
+      reviewText,
+      reviewer
+    };
 
-    if (review) {
-      setList([...reviewList, newReview]);
-      setReview("");
-      setReviewer("");
-    }
-
+    onAddReview(newReview);
+    //console.log(newReview)
+    // Clear form fields
+    setReviewText('');
+    setReviewer('');
   };
 
-  //console.log("review: " , review)
-  //console.log("reviewer: ", reviewer)
-
   return (
+
+ 
+
+
     <form onSubmit={handleSubmit}>
       <div>
+
         <label htmlFor="reviewText">Review</label>
+        
         <input
           type="text"
           id="reviewText"

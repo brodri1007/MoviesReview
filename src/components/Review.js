@@ -1,22 +1,22 @@
 import React from 'react';
-import ReviewForm from './ReviewForm';
 
-function Review({ reviews = [] }) {
+
+
+function Review(props) {
+
+console.log(props.reviewer, props.reviewText)
+
+  
   return (
-    <>
-      {reviews.map(review => (
-        <div key={review.id} id="review">
-          <p>{review.reviewText}</p>
-          <p>- {review.reviewer}</p>
-        </div>
-        
+      <>
+         
+          <div>{props.reviewText}</div>
+          <div className='user-name'>-{props.reviewer}</div>
+       
+      </>
 
-      ))}
-
-    </>
-  );
+  )
 }
-
 export default Review;
 
 

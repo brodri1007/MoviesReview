@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 
 export default function Stars(props) {
 
-
+ 
 
     const [rating, setRating] = useState(0);
     const starsArr = [1, 2, 3, 4, 5];  
@@ -14,6 +14,7 @@ export default function Stars(props) {
   
 
     const showHoverEffect = (e) => {
+      //console.log(e);
       const id = e.target.id;
       if (id <= rating) return;
       for (let i = rating + 1; i <= id; i++) {
@@ -23,6 +24,7 @@ export default function Stars(props) {
     };
 
     const removeHoverEffect = (e) => {
+     
       const id = parseInt(e.target.id);
       if (id <= rating) return;
   
