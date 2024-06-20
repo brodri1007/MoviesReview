@@ -46,3 +46,25 @@ h2 {
 .r2 {
     padding: 50px;
 }
+
+
+
+
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  
+ 
+
+  
+input[type="radio"] {
+    display: none;
+  }
+  .star {
+    cursor: pointer;
+    font-size: 2rem;
+    margin: 5px;
+  }

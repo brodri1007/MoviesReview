@@ -2,6 +2,7 @@ import React from 'react';
 import Movie from './Movie';
 
 
+
 function MovieList(props) {
     
     let movies = props.movie;
@@ -12,7 +13,9 @@ function MovieList(props) {
             return (
                 <div className="col">
                     <Movie movie={movie} />  
+              
                 </div>
+                 
             )
         })}
         </>

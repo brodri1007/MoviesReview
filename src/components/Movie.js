@@ -1,8 +1,6 @@
 import React from 'react';
 import ReviewList from './ReviewList';
-import Stars from './Stars';
-import ReviewForm from './ReviewForm';
-
+import StarRate from '../components/StarRate'
 
 
 const reviewsList = [ 
@@ -49,12 +47,14 @@ let movie = props.movie;
           </p>
           <span className="pb-5">{movie.description}</span>
           <h2>Reviews</h2>
-          <Stars movieid={movie.id} />
-          <div className='r2'>          
+      
+          <div className='r2'> 
+            <StarRate/>         
             <ReviewList movieid={movie.id} initialReviewsList={reviewsList} />         
           </div>
         </div> 
           
+       
         </>
         )
     
