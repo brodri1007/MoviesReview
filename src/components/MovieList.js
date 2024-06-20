@@ -4,15 +4,15 @@ import Movie from './Movie';
 
 function MovieList(props) {
     
-    let movies = props.movies;
+    let movies = props.movie;
 
     return (
         <>
         {movies.map(movie => {
             return (
-                <>
-                    <Movie key={movie.movieid} movie={movie} />  
-                </>
+                <div className="col">
+                    <Movie movie={movie} />  
+                </div>
             )
         })}
         </>

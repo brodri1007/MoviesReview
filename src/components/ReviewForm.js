@@ -22,30 +22,32 @@ function ReviewForm({ movieid, onAddReview }) {
 
   return (
 
- 
-
-
     <form onSubmit={handleSubmit}>
       <div>
+        <label  htmlFor="reviewText">Review</label>  <br></br>      
 
-        <label htmlFor="reviewText">Review</label>
-        
-        <input
-          type="text"
-          id="reviewText"
-          value={reviewText}
-          onChange={(e) => setReviewText(e.target.value)}
-        />
+
+
+<textarea
+            onChange={(e) => setReviewText(e.target.value)}
+            value={reviewText}
+            type="text"
+            id="user-review"
+            rows="4"
+            cols="100%"
+          ></textarea>
       </div>
       <div>
-        <label htmlFor="reviewer">Reviewer</label>
+        <label htmlFor="reviewer">Reviewer</label><br></br>
         <input
           type="text"
           id="reviewer"
           value={reviewer}
           onChange={(e) => setReviewer(e.target.value)}
         />
-      </div>
+
+        
+      </div><br></br>
       <button type="submit">Submit Review</button>
     </form>
   );

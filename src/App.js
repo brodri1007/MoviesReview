@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import MovieList from './components/MovieList';
-import Movie from './components/Movie';
+
 
 let movies = [
   {
@@ -88,17 +88,11 @@ function App() {
   return (
     <div className="App">
       <h1>Movie Reviews</h1>
-      <div className="row">
-        {movies.map(movie => {
-          return (
             <>
-              <div className="col" key={movie.movieid}>
-                <Movie movie={movie} />
+              <div className="row">
+                <MovieList movie={movies} />
               </div>
-            </>
-          )
-        })}
-      </div>
+            </>  
     </div>  
   )
 }

@@ -16,7 +16,18 @@ margin: rem
     font-size:medium;
     font-weight: 700;
 }
-
+textarea
+{
+  width:100%;
+}
+input
+{
+  width:100%;
+}
+.valign {
+    vertical-align: top;
+    padding-right: 1em;
+}
 .reviews {
     padding-bottom: 25px;
     text-align:left;
@@ -24,9 +35,14 @@ margin: rem
 }
 .user-name {
     padding-bottom: 25px;
+    font-weight: 600;
 }
 
 h2 {
     padding: 10px;
 }
 
+
+.r2 {
+    padding: 50px;
+}

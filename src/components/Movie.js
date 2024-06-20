@@ -50,8 +50,9 @@ let movie = props.movie;
           <span className="pb-5">{movie.description}</span>
           <h2>Reviews</h2>
           <Stars movieid={movie.id} />
-          <ReviewList movieid={movie.id} initialReviewsList={reviewsList} />         
-          
+          <div className='r2'>          
+            <ReviewList movieid={movie.id} initialReviewsList={reviewsList} />         
+          </div>
         </div> 
           
         </>
