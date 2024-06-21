@@ -32,7 +32,6 @@ const reviewsList = [
 
 function Movie (props) {
 
-
 let movie = props.movie;
 /*Get the movie details from the props. Add the Stars component. Pass the initial reviews list to the Reviewlist components to display reviews for each movie*/
 
@@ -46,10 +45,10 @@ let movie = props.movie;
             <span className='yr'> {movie.genre}  {movie.year}</span>
           </p>
           <span className="pb-5">{movie.description}</span>
-          <h2>Reviews</h2>
-      
+          <h2>Reviews</h2>      
           <div className='r2'> 
-            <StarRate/>         
+            <StarRate/> 
+            <br></br>         <br></br>    <br></br>   
             <ReviewList movieid={movie.id} initialReviewsList={reviewsList} />         
           </div>
         </div> 

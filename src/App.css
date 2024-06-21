@@ -7,8 +7,7 @@ margin: rem
 }
 
 .card {
-    padding: 1.5rem;
-    
+    padding: 1.5rem;   
     
 }
 
@@ -16,18 +15,22 @@ margin: rem
     font-size:medium;
     font-weight: 700;
 }
+
 textarea
 {
   width:100%;
 }
+
 input
 {
   width:100%;
 }
+
 .valign {
     vertical-align: top;
     padding-right: 1em;
 }
+
 .reviews {
     padding-bottom: 25px;
     text-align:left;
@@ -44,7 +47,8 @@ h2 {
 
 
 .r2 {
-    padding: 50px;
+    padding: 0 40px 40px 50px;
+    text-align: center;
 }
 
 

@@ -3,10 +3,7 @@ import React from 'react';
 
 
 function Review(props) {
-
-console.log(props.reviewer, props.reviewText)
-
-  
+ 
   return (
       <>
          

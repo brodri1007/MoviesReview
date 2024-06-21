@@ -12,10 +12,8 @@ function MovieList(props) {
         {movies.map(movie => {
             return (
                 <div className="col">
-                    <Movie movie={movie} />  
-              
-                </div>
-                 
+                    <Movie movie={movie} />                
+                </div>                 
             )
         })}
         </>

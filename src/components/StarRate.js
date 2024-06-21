@@ -20,7 +20,7 @@ const [rateColor, setColor] = useState(null)
                         onClick={()=> setRating(currentRate)} 
                         />
 
-                        <FaStar size={50} 
+                        <FaStar size={25} 
                         color={currentRate <= (rateColor || rating) ? "yellow" : "grey"}
                         />
 

@@ -3,12 +3,11 @@ import Review from './Review';
 import ReviewForm from './ReviewForm';
 
 
-
-
 function ReviewList(props) { 
 
   /*Get initial reviews list and movie id from Movie props*/
   const { initialReviewsList = [], movieid } = props;
+
   /*Create the new review list to include all the initial reviews and create a way to update it and force re-render.*/
   const [reviewsList, setReviewsList] = useState(initialReviewsList);
  
@@ -18,14 +17,8 @@ function ReviewList(props) {
     setReviewsList([...reviewsList, newReview]);
   };  
 
-//console.log(`Unfiltered list: ${JSON.stringify(reviewsList)}`)
-//console.log(`${movieid}`)
-
-
   /*Filter the list of reviews to only show the ones related to the particular movie being displayed*/
 const filteredReviewList = reviewsList.filter(review => review.movieid === movieid);
-console.log(`Filtered list: ${JSON.stringify(filteredReviewList)}`)
-
 
   return (
     /*Loop thru the filtered reviews/call the Review component to diplay each review, and show the review form at the end, passing the movie id */
